@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Lab assignment1</title>
+    <meta name="description" content="assignment">
+    <meta name="author" content="Joey H Zhao">
+    <script src="101159615-functions.js"></script>
+</head>
+
+<body>
+
+    <div id="f7159615"></div>
+
+
+    <script>
+
+        //Q1
+        var intLength = 5;
+        var arrayExclude = [1, 2, 5, 6, 7];
+        $("f7159615").innerHTML += "Q1:<br />getRandom(length:" + intLength + ",exclude:[" + arrayExclude + "])<br />"
+            + myQ1(intLength, arrayExclude) + "<br /><br /><br />";
+        //Q2
+        var str = "11,a,2,30,Z,3";
+        $("f7159615").innerHTML += "Q2:<br />function(" + str + ")<br/>";
+        $("f7159615").innerHTML += myQ2(str)[0] + " = " + myQ2(str)[1];
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+        //Q3
+        /*  var arryA = [1, 2, 3, 'd'];
+         var arryB = [5, 3, 0, 'a'];
+         var arryC = ['A', 'd', 9]; */
+        var arryA = ['d', 'A', 2, 1, 3];
+        var arryB = [5, 2, 1, 3, 0, 'a'];
+        var arryC = ['d', 'A', 9];
+        //$("f7159615").innerHTML += myArrayPush(str,arry);
+        //$("f7159615").innerHTML += myStringToArray(str);
+        //var arry = [[1, 2, 3, 'd'], [5, 3, 0, 'a'], ['A', 'd', 9]];
+        $("f7159615").innerHTML += "Q3:<br />function([" + arryA + "],[" + arryB + "],[" + arryC + "])<br/>"
+            + myQ3(arryA, arryB, arryC);
+        /*   var strX = "A";
+        $("f7159615").innerHTML += myCharUpperCaseToLowercase (strX); */
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+        //Q4
+        var arryD = [2, 5, 7, 'C', 'Z'];
+        var intAdder = 5;
+        $("f7159615").innerHTML += "Q4:<br />function([" + arryD + "]," + intAdder + "])<br/>";
+        $("f7159615").innerHTML += myQ4(arryD, intAdder);
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+        //Q5
+        var arryE = ['z', 'C', 2, 5, 7, 9];
+        var arryF = [];
+        $("f7159615").innerHTML += "Q5:<br />function([" + arryE + "])<br/>";
+        for (var i = 0; i < arryE.length; i++) {
+            arryF[i] = myLetterToAscii(arryE[i]);
+        }
+        $("f7159615").innerHTML += "[" + arryF + "]";
+        $("f7159615").innerHTML += "<br />";
+        $("f7159615").innerHTML += myQ5(arryE);
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+
+        //Q6
+        var arryG = [3, 2, 0, 5, 9, 24, 888, 10]
+        var numG = 2;
+        var arryH = [0, , 'k', 5, 19, 240, 99];
+        var numH = 5;
+        $("f7159615").innerHTML += "Q6:<br/>function([" + arryG + "]," + numG + ")<br/>";
+        $("f7159615").innerHTML += myQ6(arryG, numG);
+        $("f7159615").innerHTML += "<br />";
+        $("f7159615").innerHTML += "    function([" + arryH + "," + numH + "])<br/>";
+        $("f7159615").innerHTML += myQ6(arryH, numH);
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+        //Q7
+
+        var arryI = [0, 2, 'Hello', 7, 'TO', '---'];
+        var strI = "&";
+        var numI = 2;
+        $("f7159615").innerHTML += "Q7:<br/>function([" + arryI + "]," + strI + "," + numI + ")<br/>";
+        $("f7159615").innerHTML += myQ7(arryI, strI, numI);
+        $("f7159615").innerHTML += "<br />";
+
+
+        var numI = 3;
+        $("f7159615").innerHTML += "<br/>function([" + arryI + "]," + strI + "," + numI + ")<br/>";
+        $("f7159615").innerHTML += myQ7(arryI, strI, numI);
+        $("f7159615").innerHTML += "<br />";
+
+
+
+        var arryJ = [1, 2, 3, 4, 5];
+        var strJ = "&";
+        var numJ = 2;
+        $("f7159615").innerHTML += "<br/>function([" + arryJ + "]," + strJ + "," + numJ + ")<br/>";
+        $("f7159615").innerHTML += myQ7(arryJ, strJ, numJ);
+        $("f7159615").innerHTML += "<br />";
+
+        var arryK = [1, 2, 3, 4, 5, 6];
+        var strK = "&";
+        var numK = 2;
+        $("f7159615").innerHTML += "<br/>function([" + arryK + "]," + strK + "," + numK + ")<br/>";
+        $("f7159615").innerHTML += myQ7(arryK, strK, numK);
+        $("f7159615").innerHTML += "<br />";
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+        //$("f7159615").innerHTML += myStringReplace('1AB', 'A', '');
+        //$("f7159615").innerHTML += myStringReplace('1AB', ',', '');
+        //$("f7159615").innerHTML += myStringToArray("1,A,B", ',');
+
+        //Q8
+
+        var objMan = {
+            name: 'Al',
+            age: 22,
+            setName: function (a) { this.name = a }
+        }
+        var arryMan = ['name', 'age', 'sex'];
+        $("f7159615").innerHTML += "Q8:<br/>function({name:" + objMan.name + ",age:"
+            + objMan.age + "},[" + arryMan + "])<br/>";
+        $("f7159615").innerHTML += myQ8(objMan, arryMan);
+
+        var objManA = {
+            name: 'Tom',
+            age: 18,
+        }
+        var arryManA = ['name', 'phone', 'address'];
+        $("f7159615").innerHTML += "<br/>function({name:" + objManA.name + ",age:"
+            + objManA.age + "},[" + arryManA + "])<br/>";
+        $("f7159615").innerHTML += myQ8(objManA, arryManA);
+
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+
+
+        //Q9
+        //var strL = "2abc**zac22";
+        var strL = "2abc**zac22";
+        $("f7159615").innerHTML += "Q9:<br/>function('" + strL + "')<br/>";
+        $("f7159615").innerHTML += myQ9(strL);
+        $("f7159615").innerHTML += "<br /><br /><br />";
+
+        /* $("f7159615").innerHTML += myCountChatInString('x',strL); */
+
+
+        //Q10
+        var strM = "We&are*well";
+        var strN = "2, That is gr8.";
+        var strO = 33;
+        var strP = "['abcd', 3, '4k2go']";
+
+        //$("f7159615").innerHTML += "Q10:<br/>function('" + strN + "','" + strM + "'" + strO + strP + ") <br />";
+        $("f7159615").innerHTML += myQ10(strM, strN, strO, strP);
+        //$("f7159615").innerHTML += myQ10(strO);
+        //$("f7159615").innerHTML += myCharLowerCaseToUpperCase('a');
+        //$("f7159615").innerHTML += myStringToArrayWithNoSeperator(strO);
+
+    </script>
+
+
+</body>
+
+</html>
